@@ -50,12 +50,12 @@ Hai case dưới đây cho thấy hai dạng rủi ro khác nhau: một hệ th�
 | **High-risk moment** | Khi hệ thống AI đọc CV và tạo điểm/xếp hạng ứng viên để hỗ trợ recruiter quyết định ai nên được ưu tiên trong quá trình tuyển dụng. |
 | **Stakeholder bị ảnh hưởng** | Ứng viên, đặc biệt là ứng viên nữ; recruiter sử dụng kết quả AI; Amazon với vai trò tổ chức vận hành hệ thống tuyển dụng. |
 | **Failure mode** | **Bias / fairness.** Hệ thống học các mẫu từ dữ liệu lịch sử có sự mất cân bằng giới và tạo ra kết quả không trung lập về giới. |
-| **Layer bắt đầu lỗi** | **Model / Grounding (data).** Theo phân tích của tôi, nguyên nhân quan trọng nằm ở dữ liệu lịch sử được dùng để huấn luyện và cách mô hình học tương quan từ dữ liệu đó. Nguồn không cung cấp toàn bộ kiến trúc kỹ thuật nên tôi không khẳng định một thành phần nội bộ cụ thể khác. |
+| **Layer bắt đầu lỗi** | **Grounding — dữ liệu huấn luyện.** Theo phân tích của tôi, lỗi bắt đầu từ việc sử dụng dữ liệu CV lịch sử có sự mất cân bằng giới. Mô hình sau đó học các tương quan từ dữ liệu này và tạo ra kết quả xếp hạng không trung lập. Vì nguồn không công bố toàn bộ kiến trúc kỹ thuật, tôi không khẳng định thêm về các thành phần nội bộ khác. |
 | **Harm xảy ra là gì?** | Bằng chứng cho thấy một số CV mang tín hiệu liên quan tới nữ giới bị hệ thống hạ điểm. Nếu kết quả này được dùng để ưu tiên ứng viên, ứng viên nữ phù hợp có nguy cơ được xếp hạng thấp hơn và mất cơ hội tiến vào vòng tiếp theo. Tuy nhiên, nguồn không chứng minh một số lượng cụ thể ứng viên đã mất việc trực tiếp do công cụ. |
 | **Harm lens** | **Opportunity loss** và **dignity loss**. Trọng tâm chính là nguy cơ mất cơ hội nghề nghiệp do một tiêu chí đánh giá không công bằng. |
 | **Severity** | **High.** Đây là đánh giá của tôi vì nếu hệ thống thiên lệch được dùng trong tuyển dụng thực tế, nó có thể ảnh hưởng trực tiếp tới cơ hội việc làm và thu nhập của ứng viên. |
 | **Scale** | **Chưa đủ dữ liệu để xác định quy mô người bị ảnh hưởng.** Hệ thống có 500 mô hình và khoảng 50.000 thuật ngữ, nhưng đây là số liệu về hệ thống chứ không phải số ứng viên bị thiệt hại. |
-| **Probability** | **Medium theo đánh giá của tôi trong bối cảnh hệ thống thử nghiệm.** Bias đã được phát hiện trong kết quả xếp hạng, nhưng không có tỷ lệ công khai cho biết bao nhiêu CV bị đánh giá bất lợi. |
+| **Probability** | **Chưa đủ dữ liệu để định lượng.** Bias trong kết quả xếp hạng đã được phát hiện, nhưng nguồn không công bố tỷ lệ CV bị ảnh hưởng hoặc xác suất một ứng viên thực sự mất cơ hội vì kết quả đó. |
 | **Frequency** | **Chưa đủ dữ liệu để định lượng.** Nguồn cho biết lỗi xuất hiện trong quá trình đánh giá nhưng không công bố tỷ lệ xảy ra trên tổng số CV. |
 | **Vì sao?** | Case cho thấy dữ liệu lịch sử có thể mang các pattern xã hội sẵn có vào mô hình. Điều đáng chú ý là Amazon đã phát hiện vấn đề trước khi phụ thuộc hoàn toàn vào hệ thống và cuối cùng dừng dự án. Vì không có số liệu chứng minh số người thực sự mất việc do AI, tôi chỉ coi opportunity loss là nguy cơ chứ không ghi nó như hậu quả đã được chứng minh. |
 
@@ -81,9 +81,9 @@ Human review cũng cần được đặt trước khi kết quả của hệ th�
 
 - **Vấn đề hoặc sự kiện đáng chú ý:** Derek Mobley cáo buộc các công cụ tuyển dụng của Workday gây bất lợi cho ông dựa trên các đặc điểm được pháp luật bảo vệ. Mobley là một người đàn ông da đen trên 40 tuổi và cho biết mình có anxiety và depression. Ông cáo buộc rằng các công cụ thuật toán tham gia vào quá trình khiến ông liên tục bị từ chối.
 
-- **Số liệu có nguồn:** Hồ sơ vụ án năm 2026 ghi rằng Mobley đã ứng tuyển **hơn 100 vị trí** sử dụng nền tảng Workday làm cổng cho quá trình sàng lọc và tuyển dụng và các đơn này đều dẫn đến việc ông bị từ chối. Reuters trước đó cũng đưa tin Mobley cáo buộc mình bị từ chối hơn 100 công việc tại các công ty sử dụng phần mềm Workday.
+- **Số liệu có nguồn:** Theo *Third Amended Complaint* của các nguyên đơn, được đính kèm trong Document 372, từ ít nhất năm 2017 Mobley đã ứng tuyển **hơn 100 vị trí** sử dụng nền tảng Workday làm cổng cho quá trình sàng lọc và tuyển dụng; mỗi đơn đều dẫn đến việc ông bị từ chối. Đây là trình bày của nguyên đơn trong hồ sơ tố tụng, không phải kết luận thực tế cuối cùng của tòa. Reuters trước đó cũng đưa tin Mobley cáo buộc mình bị từ chối hơn 100 công việc tại các công ty sử dụng phần mềm Workday.
 
-- **Nguồn 1:** *Mobley v. Workday, Inc.*, Case No. 3:23-cv-00770, U.S. District Court for the Northern District of California. Hồ sơ vụ án được lưu trên Justia:  
+- **Nguồn 1:** *Mobley v. Workday, Inc.*, Case No. 3:23-cv-00770, Document 372, U.S. District Court for the Northern District of California, 01/07/2026; *Third Amended Complaint*, đoạn 29. Hồ sơ vụ án được lưu trên Justia:
   https://law.justia.com/cases/federal/district-courts/california/candce/3%3A2023cv00770/408645/372/
 
 - **Nguồn 2:** Reuters, *Workday must face novel bias lawsuit over AI screening software*, 15/07/2024:  
