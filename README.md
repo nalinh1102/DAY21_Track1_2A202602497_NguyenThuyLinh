@@ -1,9 +1,8 @@
 # Lab 21 — Phân tích rủi ro AI qua case study thực tế
 
-- Họ và tên: [Điền họ tên]
-- MSSV / mã học viên: [Điền mã]
-- Lớp: [Điền lớp]
-- Ngành đã chọn: [Chọn một ngành theo đề]
+Họ và tên: Nguyễn Thùy Linh
+MSSV / mã học viên: 2A202602497
+Ngành đã chọn: HR / Tuyển dụng
 
 ### 1. Industry Risk Snapshot
 
